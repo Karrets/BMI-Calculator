@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage
+    x:Class="BMI_Calculator.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:BMI_Calculator"
+    Title="BMI_Calculator"
+    mc:Ignorable="d">
+    <StackLayout Padding="10">
+        <StackLayout>
+            <Entry x:Name="UserWeight"
+                   Placeholder="Enter your weight"
+                   TextChanged="OnTextChange" />
+            <Entry x:Name="UserHeight"
+                   Placeholder="Enter your weight"
+                   TextChanged="OnTextChange" />
+            <Label x:Name="OutputLabel"
+                   Text="Your BMI will be here!" />
+        </StackLayout>
+        <Grid
+            Padding="0, 10, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="MorseOutput"
+                   FontSize="20"
+                   Grid.ColumnSpan="2">
+            </Label>
+            <Button x:Name="DotButton"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="10"
+                    FontSize="28"
+                    Clicked="DotButton_OnClicked"
+                    Text="DOT">
+            </Button>
+            <Button x:Name="DashButton"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="10"
+                    FontSize="28"
+                    Clicked="DashButton_OnClicked"
+                    Text="DASH">
+            </Button>
+            <Button x:Name="SpaceButton"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="10"
+                    FontSize="28"
+                    Clicked="SpaceButton_OnClicked"
+                    Text="SPACE">
+            </Button>
+        </Grid>
+    </StackLayout>
+</ContentPage>
