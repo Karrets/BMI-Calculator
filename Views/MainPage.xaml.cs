@@ -1,6 +1,7 @@
 ﻿namespace BMI_Calculator.Views {
     public partial class MainPage : ContentPage {
         private string _morseToBe = "";
+        private string _message = "";
 
         public MainPage() {
             InitializeComponent();
@@ -21,16 +22,18 @@
 
         private void DotButton_OnClicked(object? sender, EventArgs e) {
             _morseToBe += ".";
+            MorseOutput.Text = $"{_message} {_morseToBe}";
         }
 
         private void DashButton_OnClicked(object? sender, EventArgs e) {
             _morseToBe += "-";
+            MorseOutput.Text = $"{_message} {_morseToBe}";
         }
 
         private void SpaceButton_OnClicked(object? sender, EventArgs e) {
-            MorseOutput.Text += Morse.MorseCoder(_morseToBe);
-
+            _message += Morse.MorseCoder(_morseToBe);
             _morseToBe = "";
+            MorseOutput.Text = $"{_message} {_morseToBe}";
         }
     }
 }
